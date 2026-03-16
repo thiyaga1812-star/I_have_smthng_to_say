@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Secret Page</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    margin-top:100px;
+}
+
+#passwordSection{
+    display:none;
+}
+
+#sorry{
+    display:none;
+    font-size:90px;
+    color:red;
+    font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Enter Your Name</h2>
+<input type="text" id="name">
+<br><br>
+<button onclick="checkName()">Continue</button>
+
+<div id="passwordSection">
+    <h2>Enter Password</h2>
+    <input type="password" id="password">
+    <br><br>
+    <button onclick="checkPassword()">Submit</button>
+</div>
+
+<div id="sorry">SORRY 😔</div>
+
+<script>
+function checkName(){
+    var name = document.getElementById("name").value;
+
+    if(name.toLowerCase() === "murphy"){
+        document.getElementById("passwordSection").style.display = "block";
+    } else {
+        alert("Access denied!");
+    }
+}
+
+function checkPassword(){
+    var pass = document.getElementById("password").value;
+
+    if(pass === "1234"){   // change password here
+        document.getElementById("sorry").style.display = "block";
+    } else {
+        alert("Wrong password");
+    }
+}
+</script>
+
+</body>
+</html>
